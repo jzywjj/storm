@@ -35,3 +35,40 @@ storm.zookeeper.servers:
     - 6703
     
     
+  
+   并行度
+	一个worker进程执行的是一个topo的子集
+	一个worker进程会启动1..n个executor线程来执行一个topo的component
+	一个运行的topo就是由集群中多台物理机上的多个worker进程组成
+
+	executor是一个被worker进程启动的单独线程，每个executor只会运行1个topo的一个component
+	task是最终运行spout或者bolt代码的最小执行单元
+
+	默认：
+		一个supervisor节点最多启动4个worker进程  ?
+		每一个topo默认占用一个worker进程         ?
+		每个worker进程会启动一个executor        ?
+		每个executor启动一个task                ?
+    
+    
+   =================================================
+   
+   
+   storm  的grouping
+   
+   参考官网
+   
+   storm的  可靠性
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
